@@ -1,0 +1,55 @@
+{
+    "pages": [
+        "page/evidence/index",
+        "page/evidence/pages/item/index",
+        "page/explore/index",
+        "page/explore/pages/toplist/index",
+        "page/issue/index",
+        "page/issue/pages/write/index",
+        "page/home/index"
+    ],
+    "window": {
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#34352C",
+        "backgroundColor": "#F5F6EB"
+    },
+    "tabBar": {
+        "color": "#34352C",
+        "selectedColor": "#000000",
+        "borderStyle": "black",
+        "backgroundColor": "#EFF0DC",
+        "list": [
+            {
+                "pagePath": "page/evidence/index",
+                "iconPath": "image/tabBar_eye.png",
+                "selectedIconPath": "image/tabBar_eye_fill.png",
+                "text": "证据"
+            },
+            {
+                "pagePath": "page/explore/index",
+                "iconPath": "image/tabBar_compass.png",
+                "selectedIconPath": "image/tabBar_compass_fill.png",
+                "text": "发现"
+            },
+            {
+                "pagePath": "page/issue/index",
+                "iconPath": "image/tabBar_round_add.png",
+                "selectedIconPath": "image/tabBar_round_add_fill.png",
+                "text": "捐献"
+            },
+            {
+                "pagePath": "page/home/index",
+                "iconPath": "image/tabBar_people.png",
+                "selectedIconPath": "image/tabBar_people_fill.png",
+                "text": "我"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
+}

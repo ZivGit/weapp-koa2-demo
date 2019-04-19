@@ -1,0 +1,9 @@
+.page__hd {
+    height: 40rpx;
+    padding: 30rpx;
+    font-size: 16px;
+}
+
+.page__bd {
+    padding: 30rpx;
+}

@@ -1,0 +1,22 @@
+<import src="../../template/waterfall/index" />
+
+<block wx:if="{{!onShow}}">
+    <view class="page-mask" data-flex="dir:top main:center cross:center">
+        <image class="page-logo" src="/image/tabBar_compass.png"></image>
+        <view class="page-desc">寻找我们身处虚拟世界的证据</view>
+    </view>
+</block>
+
+<block wx:else>
+    <view class="page">
+        <block wx:if="{{pageHD}}">
+            <view class="page__hd animated fadeIn" data-flex="main:justify cross:center">
+                <text>left</text>
+                <text>right</text>
+            </view>
+        </block>
+        <view class="page__bd">
+            <template is="waterfall" data="{{list, load, preloadImages}}" />
+        </view>
+    </view>
+</block>

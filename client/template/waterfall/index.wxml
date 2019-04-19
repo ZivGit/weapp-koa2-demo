@@ -1,0 +1,48 @@
+<template name="waterfall">
+    <view class="waterfall">
+        <view class="waterfall__bd" data-flex="main:justify cross:top">
+            <block wx:for="{{list}}" wx:for-index="list_index" wx:for-item="list_item" wx:key="{{list_index}}">
+                <view class="waterfall-col">
+                    <block wx:for="{{list_item}}" wx:key="{{index}}">
+                        <navigator class="waterfall-item animated fadeIn" url="/page/evidence/pages/item/index?id={{item.id}}">
+                            <view class="waterfall-preview">
+                                <image class="waterfall-preview-img" mode="widthFix" src="{{item.post_thumbnail}}"></image>
+                                <view class="waterfall-preview-indicate" data-flex="dir:top main:justify">
+                                    <view data-flex="dir:right main:justify cross:center">
+                                        <block wx:if="{{item.post_imagesCount > 1}}">
+                                            <text class="count">{{item.post_imagesCount}}</text>
+                                        </block>
+                                    </view>
+                                    <view data-flex="main:justify cross:center">
+                                        <block wx:if="{{item.post_imagesHasGif}}">
+                                            <text class="type">GIF</text>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="waterfall-title"><text>{{item.post_title}}</text></view>
+                        </navigator>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <view class="waterfall__ft" data-flex="main:justify cross:top">
+            <block wx:if="{{load === 3}}">
+                <view class="weui-loadmore weui-loadmore_line">
+                    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+                </view>
+            </block>
+            <block wx:else hidden="{{load === 2}}">
+                <view class="weui-loadmore">
+                    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">
+                        <view class="weui-loading"></view>
+                        <view class="weui-loadmore__tips">正在加载</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <block wx:for="{{preloadImages}}" wx:key="{{index}}">
+        <image src="{{item}}" hidden bindload="imageLoaded"></image>
+    </block>
+</template>

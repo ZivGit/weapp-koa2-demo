@@ -1,0 +1,39 @@
+<!--page/explore/index.wxml-->
+<view class="page">
+    <view class="weui-panel panel-hot">
+        <view class="weui-panel__bd">
+            <scroll-view scroll-x="true" class="card">
+                <block wx:for="{{hot}}" wx:key="{{index}}">
+                    <navigator class="card-item" url="{{item.linkUrl}}">
+                        <image class="card-preview" mode="aspectFill" src="{{item.imageSrc}}"></image>
+                        <view class="card-text"><text>{{item.label}}</text></view>
+                    </navigator>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="weui-panel">
+        <view class="weui-panel__hd">{{top[topActiveKey].title}}</view>
+        <view class="weui-panel__bd">
+            <swiper class="swiper-top" bindchange="handleChangeSwiperTop">
+                <block wx:for="{{top}}" wx:key="{{topIndex}}" wx:for-index="topIndex" wx:for-item="topItem">
+                    <swiper-item>
+                        <view class="weui-media-box weui-media-box_small-appmsg">
+                            <view class="weui-cells weui-cells_in-small-appmsg">
+                                <block wx:for="{{topItem.list}}" wx:key="{{listIndex}}" wx:for-index="listIndex" wx:for-item="listItem">
+                                    <navigator url="{{listItem.linkUrl}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                                        <view class="weui-cell__hd">{{listIndex + 1}}</view>
+                                        <view class="weui-cell__bd weui-cell_primary">
+                                            <view>{{listItem.label}}</view>
+                                        </view>
+                                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                    </navigator>
+                                </block>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+.page__hd {
+    padding: 30rpx 60rpx;
+}
+
+.page__bd {
+    padding: 30rpx;
+}

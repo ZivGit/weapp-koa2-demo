@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="page__bd">
+        <textarea class="textarea" placeholder="请输入描述" maxlength="-1" fixed="true" value="{{contentValue}}" bindinput="contentDescribe" />
+    </view>
+    <view class="page__ft">
+        <view class="submit" hover-class="button-hover" bindtap="submit">发布</view>
+        <view class="menu" bindtap="menu"><view class="menu-icon"></view></view>
+    </view>
+</view>

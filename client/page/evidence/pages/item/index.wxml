@@ -1,0 +1,29 @@
+<import src="../../../../vendor/wemark/wemark" />
+
+<block wx:if="{{!(wemarkHasValue ? wemark.renderList.length : true)}}">
+    <view class="page-loading" data-flex="dir:top main:center cross:center"><text>正在加载...</text></view>
+</block>
+
+<block wx:else>
+    <view class="page">
+        <view class="page__hd">
+            <block wx:if="{{detail.post_images.length}}">
+                <view class="page-images">
+                    <block wx:for="{{detail.post_images}}" wx:key="{{index}}">
+                        <image mode="widthFix" src="{{item}}" data-src="{{item}}" bindtap="previewImage" style="background-image: url(/image/checker.png)"></image>
+                    </block>
+                </view>
+            </block>
+            <view class="page-title"><text>{{detail.post_title}}</text></view>
+            <view class="page-desc"><text space="emsp">{{detail.post_author}} {{detail.post_date}}</text></view>
+        </view>
+        <view class="page__bd">
+            <block wx:if="{{wemark.renderList.length}}">
+                <view class="page-wemark">
+                    <template is="wemark" data="{{...wemark}}" />
+                </view>
+            </block>
+        </view>
+        <view class="page__ft"></view>
+    </view>
+</block>

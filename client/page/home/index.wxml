@@ -1,0 +1,55 @@
+<view class="page">
+    <view class="page__hd">
+         <block wx:if="{{hasUserInfo === false}}">
+            <image class="userinfo-avatar" src="/image/wechat.png" bindtap="openSetting"></image>
+            <view class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">
+                    <text class="userinfo-nickname" bindtap="openSetting">- 登录 -</text>
+                </view>
+            </view>
+        </block>
+        <block wx:if="{{hasUserInfo === true}}">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+            <view class="weui-loadmore weui-loadmore_line">
+                <view class="weui-loadmore__tips weui-loadmore__tips_in-line">
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </view>
+            </view>
+        </block>
+        <view class="userinfo-signature">以下将演示小程序接口能力，具体属性参数详见小程序开发文档。</view>
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/image/wechatHL.png" style="display: block; margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">我的评论</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/image/wechatHL.png" style="display: block; margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">设置</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+            <view class="weui-cell" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="/image/wechatHL.png" style="display: block; margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd" bindtap="openSetting">退出登录</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="page__ft">
+        <view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">关于我们</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2008-2016 Hey NPC</view>
+        </view>
+    </view>
+</view>

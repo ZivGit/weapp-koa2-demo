@@ -1,0 +1,41 @@
+@import '../../../../vendor/wemark/wemark'
+
+page {
+    background-color: #EFF0DC;
+}
+
+.page__hd {
+    padding-bottom: 30rpx;
+}
+
+.page__hd .page-title {
+    margin: 0 30rpx;
+    font-size: 36rpx;
+}
+
+.page__hd .page-desc {
+    margin: 0 30rpx;
+}
+
+.page__hd .page-images {
+    margin-bottom: 30rpx;
+}
+
+.page__hd .page-images image {
+    display: block;
+    width: 100%;
+}
+
+.page__hd .page-images image+image {
+    margin-top: 10rpx;
+}
+
+.page__bd .page-wemark {
+    padding: 30rpx;
+    background-color: #F5F6EB;
+    overflow: hidden;
+}
+
+.page__ft {
+    padding: 30rpx;
+}

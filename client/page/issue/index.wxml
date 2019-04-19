@@ -1,0 +1,67 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">发布</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input {{titleValidate ? '' : 'weui-cell_warn'}}">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入标题" maxlength="{{titleMaxlength}}" value="{{titleValue}}" bindinput="titleDescribe" />
+                </view>
+                <view class="weui-cell__ft" wx:if="{{!titleValidate}}">
+                    <icon type="warn" color="#E64340"></icon>
+                </view>
+            </view>
+            <view class="weui-cell {{imagesValidate ? '' : 'weui-cell_warn'}}">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{images.length}}/{{imagesCount}}</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files">
+                                <block wx:for="{{images}}" wx:key="{{index}}">
+                                    <view
+                                        class="weui-uploader__file {{imagesActivate || imagesProgress[index] < 100 || imagesStatus[index] === false ? 'weui-uploader__file_status' : ''}}"
+                                        data-index="{{index}}"
+                                        bindlongpress="activateImage"
+                                        bindtap="deleteImages"
+                                    >
+                                        <image class="weui-uploader__img" src="{{item}}" data-src="{{item}}" mode="aspectFill" bindtap="previewImage" />
+                                        <block wx:if="{{!index}}">
+                                            <view class="mainPic">封面图片</view>
+                                        </block>
+                                        <block wx:if="{{imagesProgress[index] < 100}}">
+                                            <view class="weui-uploader__file-content">{{imagesProgress[index]}}%</view>
+                                        </block>
+                                        <block wx:else>
+                                            <block wx:if="{{imagesStatus[index] === false}}">
+                                                <view class="weui-uploader__file-content">
+                                                    <icon type="warn" size="36"></icon>
+                                                </view>
+                                            </block>
+                                        </block>
+                                        <block wx:if="{{imagesActivate}}">
+                                            <view class="weui-uploader__file-content">
+                                                <icon type="clear" size="36"></icon>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-cell__ft" wx:if="{{!imagesValidate}}">
+                    <icon type="warn" color="#E64340"></icon>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="page__ft">
+        <button type="primary" bindtap="submit" bindlongpress="next">发布</button>
+    </view>
+</view>

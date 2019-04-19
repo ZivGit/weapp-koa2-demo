@@ -1,0 +1,26 @@
+.page__hd {
+    padding: 60rpx;
+}
+
+.page__hd .userinfo-avatar {
+	display: block;
+	width: 128rpx;
+	height: 128rpx;
+	margin: 0 auto;
+	border-radius: 128rpx;
+}
+
+.page__hd .userinfo-nickname {
+	font-size: 38rpx;
+	color: #34352c;
+}
+
+.page__hd .userinfo-signature {
+	font-size: 28rpx;
+	color: #888;
+	text-align: center;
+}
+
+.page__ft {
+    padding: 30rpx 30rpx 10rpx;
+}

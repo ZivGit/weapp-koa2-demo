@@ -1,0 +1,49 @@
+.page__bd {
+    margin-bottom: 100rpx;
+    overflow: hidden;
+}
+
+.page__ft {
+    margin: 0 30rpx;
+}
+
+.button-delete {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.button-tag {
+    display: block;
+    float: left;
+    margin: 10rpx;
+}
+
+.weui-uploader .weui-uploader__title {
+    color: #B2B2B2;
+}
+
+.weui-uploader .weui-uploader__file {
+    position: relative;
+}
+
+.weui-uploader .weui-uploader__file::before {
+    z-index: 2;
+}
+
+.weui-uploader .weui-uploader__file .mainPic {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 24rpx;
+    color: white;
+    text-align: center;
+    line-height: 1.8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.weui-uploader .weui-uploader__file-content {
+    z-index: 3;
+}
